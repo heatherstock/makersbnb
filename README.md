@@ -1,7 +1,7 @@
 # Makers BnB!
-## Team: Heather Stock, Kaari Strack, Stephen Tilley, Noel Vock.
+> Team ~~insert-team-name-here~~: Heather Stock, Kaari Strack, Stephen Tilley, Noel Vock.
 
-<img src="">
+![Alt Text](http://editorial.designtaxi.com/editorial-images/news-animade10112015/3.gif)
 
 ## User Stories
 
