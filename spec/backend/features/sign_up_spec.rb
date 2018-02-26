@@ -4,6 +4,7 @@ feature "signing-up" do
     click_link('signup')
     fill_in 'email', with: "123@abc.com"
     fill_in 'password', with: "abc123"
+    click_button('Submit')
     expect(page).to have_content("123@abc.com")
   end
 end

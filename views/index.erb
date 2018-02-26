@@ -22,6 +22,9 @@
       <p>
         <a id="signup" href="/users/new">Sign Up</a>
       </p>
+      <% if @user != nil %>
+      <h1>Welcome <%= @user.email %></h1>
+      <% end %>
     </center>
   </body>
 </html>
