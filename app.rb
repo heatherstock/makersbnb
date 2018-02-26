@@ -4,7 +4,7 @@ class Makersbnb < Sinatra::Base
   enable :sessions
 
   get "/" do
-    # @user = User.get(session[:id])
+    @user = User.get(session[:id])
     erb :index
   end
 

@@ -8,6 +8,7 @@ require 'capybara/rspec'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+require_relative '../lib/data_mapper_setup.rb'
 
 # Rake.application.load_rakefile
 
