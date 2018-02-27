@@ -8,9 +8,6 @@
     <center>
       <p>
         <form action="//" method="post">
-          <input type="text" name="user-name" placeholder="User name:" class="userentry">
-          <input type="text" name="user-email" placeholder="Email:" class="userentry">
-          <input type="text" name="user-phone" placeholder="Phone #:" class="userentry">
           <input type="text" name="space-title" placeholder="Space name:" class="userentry">
           <input type="text" name="space-description" placeholder="Space description:" class="userentry" width="500" height="200">
           <input type="submit" value="CREATE SPACE" class="submit-buttons">
@@ -25,7 +22,6 @@
       <% if @user != nil %>
       <h1>Welcome <%= @user.username %></h1>
       <% end %>
-
       <p>
         <form action="/sessions/destroy" method="post">
         <button type="submit">Sign Out</button>
@@ -37,6 +33,10 @@
           <input type="submit" value="Submit" class="submit-buttons">
         </form>
       </p>
+      <p>
+        <% @properties.each do |property| %>
+        <%= property.address %>
+        <% end %>
     </center>
   </body>
 </html>
