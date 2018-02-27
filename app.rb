@@ -6,7 +6,7 @@ class Makersbnb < Sinatra::Base
   enable :sessions
 
   get "/" do
-    @properties = Properties.all
+    @properties = Space.all
     @user = User.get(session[:id])
     erb :index
   end
@@ -33,7 +33,7 @@ class Makersbnb < Sinatra::Base
   end
 
   post '/properties' do
-    Properties.create(address: params['address'], price: params['price'])
+    Space.create(address: params['address'], price: params['price'])
     redirect('/')
   end
 
