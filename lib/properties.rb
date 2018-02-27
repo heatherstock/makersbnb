@@ -6,5 +6,6 @@ class Properties
 
   property :id,         Serial
   property :address,    String
+  property :price,      Float
 
 end
