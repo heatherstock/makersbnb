@@ -39,6 +39,12 @@
         <% end %>
       </p>
       <p>
+        <% if @user %>
+        <form action="/profile" method="get">
+        <button type="submit">Profile</button>
+        <% end %>
+      </p>
+      <p>
         <% @properties.each do |property| %>
         <%= property.address %>
         £<%= property.price %>
