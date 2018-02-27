@@ -8,4 +8,9 @@ class User
   property :username,   String
   property :email,      String
   property :password,   String, :length => 60
+
+  def self.authenticate(username, password)
+    first(username: username)
+  end
+  
 end
