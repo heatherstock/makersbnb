@@ -1,7 +1,6 @@
 require 'data_mapper'
 require 'dm-postgres-adapter'
 
-# this is a User class
 class User
   include DataMapper::Resource
 
