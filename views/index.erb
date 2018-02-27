@@ -7,31 +7,36 @@
   <body>
     <center>
       <p>
-        <form action="/properties" method="post">
-          <input type="text" name="address" placeholder="Address:" class="userentry">
-          <input type="number" step="0.01" name="price" placeholder="Price:" class="userentry">
-          <input type="submit" value="CREATE SPACE" class="submit-buttons">
-        </form>
-      </p>
-      <br>
-      <br>
-      <br>
-      <p>
+        <% if !@user %>
         <a id="signup" href="/users/new">Sign Up</a>
+        <% end %>
       </p>
-      <% if @user != nil %>
+      <% if @user %>
       <h1>Welcome <%= @user.username %></h1>
       <% end %>
       <p>
+        <% if @user %>
         <form action="/sessions/destroy" method="post">
         <button type="submit">Sign Out</button>
         </form>
+        <% end %>
         <br>
+        <% if !@user %>
         <form action="/sessions" method="post">
           <input type="text" name="username" placeholder="User name:" class="userentry">
           <input type="text" name="password" placeholder="Password:" class="userentry">
           <input type="submit" value="Submit" class="submit-buttons">
         </form>
+        <% end %>
+      </p>
+      <p>
+        <% if @user %>
+        <form action="/properties" method="post">
+          <input type="text" name="address" placeholder="Address:" class="userentry">
+          <input type="number" step="0.01" name="price" placeholder="Price:" class="userentry">
+          <input type="submit" value="CREATE SPACE" class="submit-buttons">
+        </form>
+        <% end %>
       </p>
       <p>
         <% @properties.each do |property| %>
