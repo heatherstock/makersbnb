@@ -39,22 +39,15 @@ SimpleCov.start
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
 
-  # Everything in this block runs once before all the tests run
   config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
+    DatabaseCleaner.strategy = :truncation
   end
-
-  # Everything in this block runs once before each individual test
-
 
   config.before(:each) do
-    # Everything in this block runs once before each individual test
-    DatabaseCleaner.start
     Rake::Task["populate_test_database"].execute
+    DatabaseCleaner.start
   end
 
-  # Everything in this block runs once after each individual test
   config.after(:each) do
     DatabaseCleaner.clean
   end
