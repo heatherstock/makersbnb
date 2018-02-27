@@ -25,7 +25,6 @@ __PROPERTY OWNERS__
 - :question: As a user, so I can advertise multiple properties, I want to have a separate page that displays all of the properties on my account.
 =======
 - :question: As a user, so I can advertise multiple spaces, I want to have a separate page that displays all of the properties on my account.
->>>>>>> 2a1751e58d2e41098ea5070af33a70a263aa3073
 
 - [x] As a user, so other users know where my properties are, I want to be able to specify addresses.
 
