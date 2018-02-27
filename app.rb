@@ -32,5 +32,10 @@ class Makersbnb < Sinatra::Base
     redirect('/')
   end
 
+  post '/properties' do
+    Properties.create(address: params['address'], price: params['price'])
+    redirect('/')
+  end
+
   run! if app_file == $0
 end
