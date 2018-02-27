@@ -23,8 +23,16 @@
         <a id="signup" href="/users/new">Sign Up</a>
       </p>
       <% if @user != nil %>
-      <h1>Welcome <%= @user.email %></h1>
+      <h1>Welcome <%= @user.username %></h1>
       <% end %>
+
+      <p>
+        <form action="/sessions" method="post">
+          <input type="text" name="username" placeholder="User name:" class="userentry">
+          <input type="text" name="password" placeholder="Password:" class="userentry">
+          <input type="submit" value="Submit" class="submit-buttons">
+        </form>
+      </p>
     </center>
   </body>
 </html>
