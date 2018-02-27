@@ -1,6 +1,7 @@
 require 'data_mapper'
 require 'dm-postgres-adapter'
 
+# this is a User class
 class User
   include DataMapper::Resource
 
@@ -12,5 +13,5 @@ class User
   def self.authenticate(username, password)
     first(username: username)
   end
-  
+
 end
