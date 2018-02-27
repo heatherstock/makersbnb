@@ -28,5 +28,10 @@ class Makersbnb < Sinatra::Base
     redirect('/')
   end
 
+  post '/sessions/destroy' do
+    session.clear
+    redirect('/')
+  end
+
   run! if app_file == $0
 end

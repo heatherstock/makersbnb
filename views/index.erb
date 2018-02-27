@@ -27,6 +27,10 @@
       <% end %>
 
       <p>
+        <form action="/sessions/destroy" method="post">
+        <button type="submit">Sign Out</button>
+        </form>
+        <br>
         <form action="/sessions" method="post">
           <input type="text" name="username" placeholder="User name:" class="userentry">
           <input type="text" name="password" placeholder="Password:" class="userentry">
