@@ -7,7 +7,6 @@ class Makersbnb < Sinatra::Base
 
   get "/" do
     @user = User.get(session[:id])
-    p @user
     erb :index
   end
 
@@ -18,8 +17,6 @@ class Makersbnb < Sinatra::Base
   post '/users' do
     user = User.create(email: params['email'], password: params['password'])
     session[:id] = user.id
-    p "+++++++++++++"
-    p session[:id]
     redirect('/')
   end
 

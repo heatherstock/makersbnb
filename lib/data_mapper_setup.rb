@@ -4,9 +4,10 @@ require_relative 'user'
 
 if ENV['RACK_ENV'] == 'test'
   DataMapper.setup(:default, 'postgres://localhost/makersbnb_test')
+  DataMapper.finalize
+  DataMapper.auto_migrate!
 else
   DataMapper.setup(:default, 'postgres://localhost/makersbnb')
+  DataMapper.finalize
+  DataMapper.auto_upgrade!
 end
-
-DataMapper.finalize
-DataMapper.auto_migrate!
