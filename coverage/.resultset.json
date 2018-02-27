@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/KazzStrack/Dropbox/makers_academy/makersbnb/spec/backend/features/sign_in_spec.rb": [
+      "/Users/noelvock/Projects/makersbnb/spec/backend/features/sign_in_spec.rb": [
         1,
         1,
         1,
@@ -12,7 +12,19 @@
         null,
         null
       ],
-      "/Users/KazzStrack/Dropbox/makers_academy/makersbnb/spec/backend/features/sign_up_spec.rb": [
+      "/Users/noelvock/Projects/makersbnb/spec/backend/features/sign_out_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/noelvock/Projects/makersbnb/spec/backend/features/sign_up_spec.rb": [
         1,
         1,
         1,
@@ -26,6 +38,6 @@
         null
       ]
     },
-    "timestamp": 1519730965
+    "timestamp": 1519731978
   }
 }

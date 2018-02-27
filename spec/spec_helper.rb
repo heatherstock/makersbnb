@@ -4,13 +4,13 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 require 'capybara'
 require 'capybara/rspec'
-# require 'rake'
+require 'rake'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 require_relative '../lib/data_mapper_setup.rb'
 
-# Rake.application.load_rakefile
+Rake.application.load_rakefile
 
 Capybara.app = Makersbnb
 
@@ -37,6 +37,9 @@ SimpleCov.start
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  config.before(:each) do
+    Rake::Task["populate_test_database"].execute
+  end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
