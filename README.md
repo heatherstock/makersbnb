@@ -5,7 +5,6 @@
 
 ## User Stories
 
-```
 - [ ] As a user,
 So I can advertise a space,
 I want to be able to add my name and contact details.
@@ -27,7 +26,7 @@ I want to be able to sign up.
 So I can have an account,
 I want to be able to sign in.
 
-__Team 2__ 
+__Team 2__
 - [ ] As a user,
 So that I can make a booking,
 I want to be able to request a booking on a particular date.
@@ -47,5 +46,3 @@ I want to be able to show booked and available dates for my spaces.
 - [ ]As a user,
 So that I don't lose money,
 I want to be able to re-advertise unconfirmed booking dates.
-
-```
