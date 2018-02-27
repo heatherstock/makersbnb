@@ -43,6 +43,6 @@ I want to be able to confirm a booking on a particular date.
 So that people can see the dates that are available,
 I want to be able to show booked and available dates for my spaces.
 
-- [ ]As a user,
+- [ ] As a user,
 So that I don't lose money,
 I want to be able to re-advertise unconfirmed booking dates.
