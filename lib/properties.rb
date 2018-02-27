@@ -7,5 +7,6 @@ class Properties
   property :id,         Serial
   property :address,    String
   property :price,      Float
+  property :image,      String
 
 end
