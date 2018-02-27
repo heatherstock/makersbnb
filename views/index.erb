@@ -7,9 +7,9 @@
   <body>
     <center>
       <p>
-        <form action="//" method="post">
-          <input type="text" name="space-title" placeholder="Space name:" class="userentry">
-          <input type="text" name="space-description" placeholder="Space description:" class="userentry" width="500" height="200">
+        <form action="/properties" method="post">
+          <input type="text" name="address" placeholder="Address:" class="userentry">
+          <input type="number" step="0.01" name="price" placeholder="Price:" class="userentry">
           <input type="submit" value="CREATE SPACE" class="submit-buttons">
         </form>
       </p>
@@ -36,6 +36,7 @@
       <p>
         <% @properties.each do |property| %>
         <%= property.address %>
+        £<%= property.price %>
         <% end %>
     </center>
   </body>
