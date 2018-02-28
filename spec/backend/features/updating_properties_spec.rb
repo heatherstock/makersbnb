@@ -8,7 +8,6 @@ feature 'profile properties' do
     fill_in 'price', with: '100'
     fill_in 'image', with: 'www.imgur.com'
     click_button('CREATE SPACE')
-
     click_button('USER PROFILE')
     within('#2') do
       fill_in 'address', with: '72 Sunny Grove'
