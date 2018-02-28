@@ -4,7 +4,11 @@
 }
 
 body {
+
+  background-image: url("https://image.ibb.co/iQ6bcc/mbb_index.png");
+
   background-color: white;
+
   background-size: 100%;
   background-repeat: no-repeat;
   text-align: center;
@@ -19,7 +23,11 @@ text-align: center;
 }
 
 .userpanel {
+
+  margin: auto;
+
   margin-top: 20px;
+
   width: 800px;
   height: 70%;
   background: rgba(0, 0, 0, 0.2);
