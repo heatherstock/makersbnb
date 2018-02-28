@@ -12,8 +12,12 @@ class Makersbnb < Sinatra::Base
   get '/' do
     @properties = Space.all
     @user = User.get(session[:id])
+    @username = User.first(:id => '4')
+    @users = User.all
+    p @users
     erb :index
   end
+  # <% if @user.id == property.user_id %>
 
   get '/users/new' do
     erb :users
@@ -42,10 +46,6 @@ class Makersbnb < Sinatra::Base
   end
 
   post '/properties' do
-    p params['address']
-    p params['price']
-    p User.get(session[:id])
-    p params['image']
     @user = User.get(session[:id])
     Space.create(address: params['address'], price: params['price'], user_id: @user.id, image: params['image'])
     redirect('/')
