@@ -30,7 +30,6 @@
                   <button type="submit">Sign Out</button>
                 </form>
               <% end %>
-
         <p>
           <% if @user %>
           <form action="/properties" method="post">
@@ -40,6 +39,47 @@
             <br><br>
             <input type="submit" value="CREATE SPACE" class="submit-button">
           </form>
+  <body>
+    <center>
+      <p>
+        <% if !@user %>
+          <a id="signup" href="/users/new">Sign Up</a>
+        <% end %>
+      </p>
+      <% if @user %>
+        <h1>Welcome
+          <%= @user.username %></h1>
+      <% end %>
+      <p>
+        <% if @user %>
+          <form action="/sessions/destroy" method="post">
+            <button type="submit">Sign Out</button>
+          </form>
+        <% end %>
+        <br>
+        <% if !@user %>
+          <form action="/sessions" method="post">
+            <input type="text" name="username" placeholder="User name:" class="userentry">
+            <input type="text" name="password" placeholder="Password:" class="userentry">
+            <input type="submit" value="Submit" class="submit-buttons">
+          </form>
+        <% end %>
+      </p>
+      <p>
+        <% if @user %>
+          <form action="/properties" method="post">
+            <input type="text" name="address" placeholder="Address:" class="userentry">
+            <input type="number" step="0.01" name="price" placeholder="Price:" class="userentry">
+            <input type="text" name="image" placeholder="Image URL:" class="userentry">
+
+            <input type="submit" value="CREATE SPACE" class="submit-buttons">
+          </form>
+        <% end %>
+      </p>
+      <p>
+        <% if @user %>
+          <form action="/profile" method="get">
+            <button type="submit">Profile</button>
           <% end %>
         </p>
         <p>
@@ -52,3 +92,16 @@
       </center>
     </body>
 </html>
+            <%= property.address %>
+            <%= property.price %>
+
+            <% @users.each do |user| %>
+              <% if user.id == property.user_id %>
+                <%= user.username %>
+              <% end %>
+            <% end %>
+            <img src="<%= property.image %>">
+          <% end %>
+        </center>
+      </body>
+    </html>
