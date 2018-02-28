@@ -4,7 +4,7 @@ require 'dm-postgres-adapter'
 class User
   include DataMapper::Resource
 
-  has n, :spaces, through: Resource
+  has n, :spaces
 
   property :id,         Serial
   property :username,   String
