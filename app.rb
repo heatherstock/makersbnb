@@ -53,6 +53,7 @@ class Makersbnb < Sinatra::Base
 
   get '/profile' do
     @user = User.get(session[:id])
+    @properties = Space.all
     erb :profile
   end
 
