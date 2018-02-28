@@ -47,7 +47,7 @@ class Makersbnb < Sinatra::Base
 
   post '/properties' do
     @user = User.get(session[:id])
-    Space.create(address: params['address'], price: params['price'], user_id: @user.id, image: params['image'])
+    Space.create(address: params['address'], price: params['price'], user_id: @user.id, image: params['image'], from_date: params['from'], until_date: params['until'])
     redirect('/')
   end
 
