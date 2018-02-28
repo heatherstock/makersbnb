@@ -4,50 +4,61 @@
     <link rel="stylesheet" type="text/css" href="/index.css">
     <title>Makers BnB!</title>
   </head>
+
     <body>
       <center>
+        <p>
+        <% @properties.each do |property| %>
+        <%= property.address %>
+        £<%= property.price %>
+        <img src="<%= property.image %>">
+        <% end %>
+        </p>
+
         <div class="userpanel">
           <img align="center" src="https://image.ibb.co/bMhA3H/mbb_header.png" width="825" height="200">
             <% if !@user %>
               <a id="signup" href="/users/new" class="heading">Sign Up!</a>
             <% end %>
           <br><br>
-          <p>
-            <form action="/sessions" method="post">
-              <input type="text" name="username" placeholder="User name:" class="textboxes">
-            <br><br>
-              <input type="text" name="password" placeholder="Password:" class="textboxes">
-            <br><br>
-              <input type="submit" value="LOG IN">
-            </form>
-          </p>
             <% if @user %>
               <h1>Welcome <%= @user.username %>!</h1>
                 <form action="/profile" method="get" class="inline-buttons">
-                  <button type="submit">User Profile</button>
+                  <button type="submit">User Profile</button><br>
                 </form>
                 <form action="/sessions/destroy" method="post" class="inline-buttons">
-                  <button type="submit">Sign Out</button>
+                  <button type="submit">Sign Out</button><br>
+                </form>
+                <br><br>
+            <% end %>
+              <% if !@user %>
+                <form action="/sessions" method="post">
+                  <input type="text" name="username" placeholder="User name:" class="textboxes">
+                <br><br>
+                  <input type="text" name="password" placeholder="Password:" class="textboxes">
+                <br><br>
+                  <input type="submit" value="LOG IN">
                 </form>
               <% end %>
 
-        <p>
-          <% if @user %>
-          <form action="/properties" method="post">
-            <input type="text" name="address" placeholder="Address:" class="textboxes">
-            <br><br>
-            <input type="number" name="price" placeholder="Price:" step="0.01" class="textboxes">
-            <br><br>
-            <input type="submit" value="CREATE SPACE" class="submit-button">
-          </form>
-          <% end %>
-        </p>
-        <p>
-          <% @properties.each do |property| %>
-          <%= property.address %>
-          £<%= property.price %>
-          <img src="<%= property.image %>">
-          <% end %>
+
+                <% if @user %>
+                  <form action="/properties" method="post">
+                    <input type="text" name="address" placeholder="Address:" class="textboxes">
+                    <br><br>
+                    <input type="number" name="price" placeholder="Price:" step="0.01" class="textboxes">
+                    <br><br>
+                    <input type="text" name="image" placeholder="Image URL:" class="textboxes">
+                    <br><br>
+                    <input type="submit" value="CREATE SPACE" class="submit-button">
+                  </form>
+                <% end %>
+
+                <p>
+
+                </p>
+
+
         </div>
       </center>
     </body>
