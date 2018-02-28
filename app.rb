@@ -53,5 +53,14 @@ class Makersbnb < Sinatra::Base
     erb :profile
   end
 
+  post '/properties/:id/update' do
+    p params['address']
+    p params['price']
+    @space = Space.get(params['id'])
+    p @space
+    @space.update(address: params['address'], price: params['price'])
+    redirect('/profile')
+  end
+
   run! if app_file == $PROGRAM_NAME
 end
