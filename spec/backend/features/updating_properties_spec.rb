@@ -15,6 +15,6 @@ feature 'profile properties' do
       fill_in 'price', with: '7'
       click_button('Update')
     end
-    expect(page).to have_content('72 Sunny Grove'
+    expect(page).to have_content('72 Sunny Grove')
   end
 end
