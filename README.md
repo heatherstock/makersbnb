@@ -1,11 +1,9 @@
 # Makers BnB!!
 > Team ~~rubbish-at-teaming~~: Heather Stock, Kaari Strack, Stephen Tilley, Noel Vock.
 
-<p align="center">
-  <img width="600" height="338" src="http://editorial.designtaxi.com/editorial-images/news-animade10112015/3.gif">
+<p align="left">
+  <img width="300" height="100" src="http://editorial.designtaxi.com/editorial-images/news-animade10112015/3.gif">
 </p>
-
-<div style="text-align: center;">
 
 ## User Stories
 
@@ -48,5 +46,3 @@ __GUESTS__
 - :question: As a user, if and when my booking is confirmed, I want to be able to make a payment.
 
 - :question: As a user, if and when my booking is confirmed, I want to receive a text message confirming my booking.
-
-</div>
