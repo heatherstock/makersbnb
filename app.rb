@@ -12,8 +12,12 @@ class Makersbnb < Sinatra::Base
   get '/' do
     @properties = Space.all
     @user = User.get(session[:id])
+    @username = User.first(:id => '4')
+    @users = User.all
+    p @users
     erb :index
   end
+  # <% if @user.id == property.user_id %>
 
   get '/users/new' do
     erb :users
