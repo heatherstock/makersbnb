@@ -3,8 +3,8 @@ feature "signing out" do
     visit('/')
     fill_in 'username', with: 'Jim'
     fill_in 'password', with: 'abc123'
-    click_button('Submit')
-    click_button('Sign Out')
+    click_button('SIGN IN')
+    click_button('SIGN OUT')
     expect(page).not_to have_content("Welcome Jim")
   end
 end
