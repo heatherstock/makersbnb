@@ -1,7 +1,9 @@
 require 'sinatra/base'
 require 'sinatra/flash'
 require './lib/user'
+require './lib/space'
 require './lib/data_mapper_setup'
+
 
 class Makersbnb < Sinatra::Base
   enable :sessions
@@ -40,7 +42,12 @@ class Makersbnb < Sinatra::Base
   end
 
   post '/properties' do
-    Space.create(address: params['address'], price: params['price'])
+    p params['address']
+    p params['price']
+    p User.get(session[:id])
+    p params['image']
+    @user = User.get(session[:id])
+    Space.create(address: params['address'], price: params['price'], user_id: @user.id, image: params['image'])
     redirect('/')
   end
 
