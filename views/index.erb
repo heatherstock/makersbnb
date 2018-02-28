@@ -57,7 +57,9 @@
             <p>
               <% @properties.each do |property| %>
                 <%= property.address %>
-                £<%= property.price %>
+                <%= property.price %>
+                <%= property.from_date %>
+                <%= property.until_date %>
                 <img src="<%= property.image %>">
               <% end %>
             </p>
