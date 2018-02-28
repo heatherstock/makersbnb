@@ -1,6 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-image: url("");
-  background-size: auto;
+  background-image: url("https://image.ibb.co/iQ6bcc/mbb_index.png");
+  background-size: 100%;
   background-repeat: no-repeat;
   text-align: center;
+}
+
+.heading {
+font-family: 'Chalkduster', fantasy;
+text-shadow: 0 0 5px rgba(0,0,0,0.5);
+font-size: 2.0em;
+color: black;
+text-align: center;
+}
+
+.userpanel {
+  margin: auto;
+  width: 800px;
+  height: 70%;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  border-radius: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+}
+
+.inline-buttons {
+  display: inline-block;
+}
+
+h1 {
+font-family: 'Chalkduster', fantasy;
+text-shadow: 0 0 5px rgba(0,0,0,0.5);
+font-size: 2.0em;
+color: black;
+text-align: center;
+}
+
+input[type=text] {
+    width: 150px;
+    box-sizing: border-box;
+    border: 2px dotted #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 50%;
+}
+
+input[type=number] {
+    width: 150px;
+    box-sizing: border-box;
+    border: 2px dotted #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=number]:focus {
+    width: 50%;
 }

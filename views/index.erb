@@ -6,42 +6,47 @@
   </head>
   <body>
     <center>
-      <p>
-        <% if !@user %>
-        <a id="signup" href="/users/new">Sign Up</a>
-        <% end %>
-      </p>
+      <div class="userpanel">
+        <img align="center" src="https://image.ibb.co/bMhA3H/mbb_header.png" width="825" height="200">
+        <p>
+          <% if !@user %>
+          <a id="signup" href="/users/new" class="heading">Sign Up</a>
+          <% end %>
+        </p>
       <% if @user %>
-      <h1>Welcome <%= @user.username %></h1>
+        <h1>Welcome <%= @user.username %>!</h1>
       <% end %>
-      <p>
-        <% if @user %>
-        <form action="/sessions/destroy" method="post">
-        <button type="submit">Sign Out</button>
-        </form>
-        <% end %>
-        <br>
+        <p>
+            <% if @user %>
+              <form action="/profile" method="get" class="inline-buttons">
+                <button type="submit">User Profile</button>
+              </form>
+              <form action="/sessions/destroy" method="post" class="inline-buttons">
+                <button type="submit">Sign Out</button>
+              </form>
+            <% end %>
+
+
+        <br><br>
         <% if !@user %>
-        <form action="/sessions" method="post">
-          <input type="text" name="username" placeholder="User name:" class="userentry">
-          <input type="text" name="password" placeholder="Password:" class="userentry">
-          <input type="submit" value="Submit" class="submit-buttons">
-        </form>
+          <form action="/sessions" method="post">
+            <input type="text" name="username" placeholder="User name:" class="textboxes">
+          <br><br>
+            <input type="text" name="password" placeholder="Password:" class="textboxes">
+          <br><br>
+            <input type="submit" value="LOG IN">
+          </form>
         <% end %>
       </p>
       <p>
         <% if @user %>
         <form action="/properties" method="post">
-          <input type="text" name="address" placeholder="Address:" class="userentry">
-          <input type="number" step="0.01" name="price" placeholder="Price:" class="userentry">
-          <input type="submit" value="CREATE SPACE" class="submit-buttons">
+          <input type="text" name="address" placeholder="Address:" class="textboxes">
+          <br><br>
+          <input type="number" name="price" placeholder="Price:" step="0.01" class="textboxes">
+          <br><br>
+          <input type="submit" value="CREATE SPACE" class="submit-button">
         </form>
-        <% end %>
-      </p>
-      <p>
-        <% if @user %>
-        <form action="/profile" method="get">
-        <button type="submit">Profile</button>
         <% end %>
       </p>
       <p>
@@ -50,6 +55,7 @@
         £<%= property.price %>
         <img src="<%= property.image %>">
         <% end %>
+      </div>
     </center>
   </body>
 </html>
