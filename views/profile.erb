@@ -13,7 +13,7 @@
   <%= property %>
   <%= property.id %>
   <%= property.address %>
-  <form action="/properties/<%= property.id %>/update" method="post">
+  <form id="<%= property.id %>" action="/properties/<%= property.id %>/update" method="post">
     <input type="text" name="address" placeholder="Update address:" class="userentry">
     <input type="text" name="price" placeholder="Update price:" class="userentry">
     <input type="submit" value="<%= property.id %>-Update">
