@@ -14,7 +14,6 @@ class Makersbnb < Sinatra::Base
     @user = User.get(session[:id])
     @username = User.first(:id => '4')
     @users = User.all
-    p @properties
     erb :index
   end
   # <% if @user.id == property.user_id %>
@@ -58,10 +57,7 @@ class Makersbnb < Sinatra::Base
   end
 
   post '/properties/:id/update' do
-    p params['address']
-    p params['price']
     @space = Space.get(params['id'])
-    p @space
     @space.update(address: params['address'], price: params['price'])
     redirect('/profile')
   end
