@@ -15,5 +15,4 @@ task :populate_test_database do
   connection = PG.connect(dbname: 'makersbnb_test')
   connection.exec("INSERT INTO users(username, email, password) VALUES('Jim', 'abc@123.com', 'abc123');")
   connection.exec("INSERT INTO spaces(address, price, image, user_id) VALUES('Makers Court', 5.75, 'https://i.imgur.com/7nkZiho.jpg', 1);")
-  # connection.exec("INSERT INTO properties(address, price, image) VALUES('Makers Court', 5.75, 'https://i.imgur.com/7nkZiho.jpg');")
 end
