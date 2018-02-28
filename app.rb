@@ -42,10 +42,6 @@ class Makersbnb < Sinatra::Base
   end
 
   post '/properties' do
-    p params['address']
-    p params['price']
-    p User.get(session[:id])
-    p params['image']
     @user = User.get(session[:id])
     Space.create(address: params['address'], price: params['price'], user_id: @user.id, image: params['image'])
     redirect('/')
@@ -53,6 +49,7 @@ class Makersbnb < Sinatra::Base
 
   get '/profile' do
     @user = User.get(session[:id])
+    @properties = Space.all
     erb :profile
   end
 
