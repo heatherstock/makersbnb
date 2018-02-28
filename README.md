@@ -3,6 +3,9 @@
 
 <p align="center">
   <img width="600" height="338" src="http://editorial.designtaxi.com/editorial-images/news-animade10112015/3.gif">
+</p>
+
+<div style="text-align: center;">
 
 ## User Stories
 
@@ -46,4 +49,4 @@ __GUESTS__
 
 - :question: As a user, if and when my booking is confirmed, I want to receive a text message confirming my booking.
 
-</p>
+</div>
