@@ -3,7 +3,7 @@ feature "signing-in" do
     visit('/')
     fill_in 'username', with: 'Jim'
     fill_in 'password', with: 'abc123'
-    click_button('Submit')
+    click_button('SIGN IN')
     expect(page).to have_content('Welcome Jim')
   end
 end

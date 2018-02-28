@@ -3,7 +3,7 @@ feature 'spaces can be added and are displayed' do
     visit ('/')
     fill_in 'username', with: 'Jim'
     fill_in 'password', with: 'abc123'
-    click_button('Submit')
+    click_button('SIGN IN')
     fill_in 'address', with: '27 Snowy road'
     fill_in 'price', with: '100'
     fill_in 'image', with: 'www.imgur.com'

@@ -3,12 +3,12 @@ feature 'profile properties' do
     visit ('/')
     fill_in 'username', with: 'Jim'
     fill_in 'password', with: 'abc123'
-    click_button('Submit')
+    click_button('SIGN IN')
     fill_in 'address', with: '27 Snowy road'
     fill_in 'price', with: '100'
     fill_in 'image', with: 'www.imgur.com'
     click_button('CREATE SPACE')
-    click_button('Profile')
+    click_button('USER PROFILE')
     expect(page).to have_content("27 Snowy road")
   end
 
@@ -16,16 +16,16 @@ feature 'profile properties' do
     visit ('/')
     fill_in 'username', with: 'Bob'
     fill_in 'password', with: 'bob'
-    click_button('Submit')
+    click_button('SIGN IN')
     fill_in 'address', with: '27 Snowy road'
     fill_in 'price', with: '100'
     fill_in 'image', with: 'www.imgur.com'
     click_button('CREATE SPACE')
-    click_button('Sign Out')
+    click_button('SIGN OUT')
     fill_in 'username', with: 'Jim'
     fill_in 'password', with: 'abc123'
-    click_button('Submit')
-    click_button('Profile')
+    click_button('SIGN IN')
+    click_button('USER PROFILE')
     expect(page).not_to have_content("27 Snowy road")
   end
 end
