@@ -1,7 +1,7 @@
 # Makers BnB!!
 > Team ~~rubbish-at-teaming~~: Heather Stock, Kaari Strack, Stephen Tilley, Noel Vock.
 
-<img src="http://editorial.designtaxi.com/editorial-images/news-animade10112015/3.gif" width="600" height="338"/>
+<div style="img align="center" src="http://editorial.designtaxi.com/editorial-images/news-animade10112015/3.gif" width="600" height="338"/></div>
 
 ## User Stories
 
