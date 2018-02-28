@@ -6,6 +6,6 @@ feature "signing-up" do
     fill_in 'email', with: "notvalid"
     fill_in 'password', with: "abc123"
     click_button('Submit')
-    expect(page).not_to have_content("Jim")
+    expect(page).to have_content("NO!")
   end
 end

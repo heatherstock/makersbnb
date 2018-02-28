@@ -23,7 +23,7 @@ class Makersbnb < Sinatra::Base
       session[:id] = user.id
       redirect('/')
     else
-      flash.now[:notice] = "NO!"
+      flash[:notice] = "NO!"
       redirect('/users/new')
     end
   end
