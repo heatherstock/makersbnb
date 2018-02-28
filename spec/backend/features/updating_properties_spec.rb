@@ -13,7 +13,7 @@ feature 'profile properties' do
 
     # there needs to be something here!
     # an "edit" button maybe?
-    
+
     fill_in '1', with: '1 Makers Court'
     fill_in 'price', with: '1'
     click_button('Update')

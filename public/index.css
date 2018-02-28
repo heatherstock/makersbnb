@@ -4,9 +4,7 @@
 }
 
 body {
-  background-image: url("https://image.ibb.co/iQ6bcc/mbb_index.png");
   background-color: white;
-  background-size: 100%;
   background-repeat: no-repeat;
   text-align: center;
 }
@@ -16,43 +14,33 @@ body {
   margin-top: 20px;
   width: 800px;
   height: 70%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.1);
   padding: 30px;
   border-radius: 20px;
 }
 
 .logo {
-
+  margin-bottom: 20px;
 }
 
-.welcome-user {
-
-}
-
-.userlogin {
-
+.userloginform {
+  font-family: 'Papyrus', fantasy;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+  font-size: 2.0em;
+  color: black;
+  text-align: center;
 }
 
 .propertydisplay {
   margin-top: 20px;
 }
 
-.heading {
-font-family: 'Chalkduster', fantasy;
-text-shadow: 0 0 5px rgba(0,0,0,0.5);
-font-size: 2.0em;
-color: black;
-text-align: center;
-}
-
-
-
 a {
   text-decoration: none;
 }
 
 a:hover {
-  color: red;
+  color: purple;
 }
 
 .inline-buttons {
@@ -60,14 +48,15 @@ a:hover {
 }
 
 h1 {
-font-family: 'Chalkduster', fantasy;
+font-family: 'Papyrus', fantasy;
 text-shadow: 0 0 5px rgba(0,0,0,0.5);
-font-size: 2.0em;
 color: black;
 text-align: center;
 }
 
 input[type=text] {
+    font-family: 'Papyrus', fantasy;
+    padding: 5px;
     width: 150px;
     box-sizing: border-box;
     border: 2px dotted #cccccc;
