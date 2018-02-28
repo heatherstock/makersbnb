@@ -14,7 +14,7 @@ class Makersbnb < Sinatra::Base
     @user = User.get(session[:id])
     @username = User.first(:id => '4')
     @users = User.all
-    p @users
+    p @properties
     erb :index
   end
   # <% if @user.id == property.user_id %>

@@ -4,14 +4,37 @@
 }
 
 body {
-
   background-image: url("https://image.ibb.co/iQ6bcc/mbb_index.png");
-
   background-color: white;
-
   background-size: 100%;
   background-repeat: no-repeat;
   text-align: center;
+}
+
+.userpanel {
+  margin: auto;
+  margin-top: 20px;
+  width: 800px;
+  height: 70%;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.logo {
+
+}
+
+.welcome-user {
+
+}
+
+.userlogin {
+
+}
+
+.propertydisplay {
+  margin-top: 20px;
 }
 
 .heading {
@@ -22,18 +45,7 @@ color: black;
 text-align: center;
 }
 
-.userpanel {
 
-  margin: auto;
-
-  margin-top: 20px;
-
-  width: 800px;
-  height: 70%;
-  background: rgba(0, 0, 0, 0.2);
-  padding: 25px;
-  border-radius: 20px;
-}
 
 a {
   text-decoration: none;
