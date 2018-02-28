@@ -1,11 +1,13 @@
 require 'sinatra/base'
+require 'sinatra/flash'
 require './lib/user'
 require './lib/data_mapper_setup'
 
 class Makersbnb < Sinatra::Base
   enable :sessions
+  register Sinatra::Flash
 
-  get "/" do
+  get '/' do
     @properties = Space.all
     @user = User.get(session[:id])
     erb :index
@@ -17,8 +19,13 @@ class Makersbnb < Sinatra::Base
 
   post '/users' do
     user = User.create(email: params['email'], password: params['password'], username: params['username'])
-    session[:id] = user.id
-    redirect('/')
+    if user.save
+      session[:id] = user.id
+      redirect('/')
+    else
+      flash.now[:notice] = "NO!"
+      redirect('/users/new')
+    end
   end
 
   post '/sessions' do
@@ -42,5 +49,5 @@ class Makersbnb < Sinatra::Base
     erb :profile
   end
 
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end
