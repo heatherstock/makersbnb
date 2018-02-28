@@ -7,6 +7,14 @@
 <p>
   You are <%= @user.username %>
   Your email address is <%= @user.email %>
+  Your properties:
+  <% @properties.each do |property| %>
+  <% if @user.id == property.user_id %>
+  <%= property.address %>
+  <%= property.price %>
+  <img src="<%= property.image %>">
+  <% end %>
+  <% end %>
 </p>
 
 </body>
