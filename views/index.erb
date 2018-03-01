@@ -73,11 +73,11 @@
                 <%= property.until_date %>
                 <img src="<%= property.image %>">
                 <!-- request button -->
-                <form id="<%= property.id %>" action="/request" method="get">
+                <form id="<%= property.id %>" action="/request" method="post">
                   <input type="submit" name="Request" value="Request">
+                  <input type="hidden" name="property-id" value="<%= property.user_id %>">
                 </form>
 
-                <%= p @properties %>
                 <!-- request button -->
               <% end %>
             </p>
