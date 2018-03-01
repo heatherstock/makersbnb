@@ -10,18 +10,24 @@ body {
   font-family: "Stencil std", fantasy;
 }
 
+
 /* the following sections are responsible for the text box animation */
 
 input[type=text]:focus {
   width: 50%;
 }
 
-input[type=number]:focus {
+input[type=email]:focus {
+  width: 50%;
+}
+
+input[type=password]:focus {
   width: 50%;
 }
 
 input[type=text] {
-  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 150px;
   box-sizing: border-box;
   border: 2px groove #cccccc;
@@ -31,7 +37,21 @@ input[type=text] {
   transition: width 0.4s ease-in-out;
 }
 
-input[type=number] {
+input[type=email] {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 150px;
+  box-sizing: border-box;
+  border: 2px groove #cccccc;
+  border-radius: 5px;
+  font-size: 16px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=password] {
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 150px;
   box-sizing: border-box;
   border: 2px groove #cccccc;
@@ -44,33 +64,17 @@ input[type=number] {
 /* the big opaque panel that frames all the property stuff */
 
 .webpanel {
-  text-align: center;
-  margin-top: 100px;
-  width: 100%;
+  text-align: left;
+  margin-top: 80px;
+  width: 1000px;
   background: rgba(192,192,192,0.3); /* this sets the level of opacity, and the colour of the panel */
   padding: 40px;
+  border-radius: 20px;
   border-color: gray;
   border-style: ridge;
+  font-family: "Marker Felt", fantasy;
   font-size: 20px;
   text-shadow: 0 0 5px rgba(0,0,0,0.5);
-}
-
-/* h1 {
-text-shadow: 0 0 5px rgba(0,0,0,0.5);
-color: black;
-text-align: center;
-} */
-
-/* this sets the style of each property image */
-
-img#properties {
-  max-height: 300px;
-  min-height: 200px;
-  max-width: 300px;
-  min-width: 200px;
-  border-radius: 20%; /* rounded corners */
-  border-style: outset;
-  border-color: gray;
 }
 
 /* everything below this point edits the nav bar */

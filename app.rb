@@ -23,7 +23,7 @@ class Makersbnb < Sinatra::Base
   end
 
   get '/users/new' do
-    erb :users
+    erb :signup
   end
 
   post '/users' do
@@ -81,7 +81,7 @@ class Makersbnb < Sinatra::Base
   get '/request' do
     @user = User.get(params['property-id'])
     p @user.username
-    p 'muuuuuuuuuuuuuuuu'
+    p 'muuuuuuuuuuuuuuuu' # wtf guys :P
     p @user.username
     p params['property-id']
     @current_property = params['Request']

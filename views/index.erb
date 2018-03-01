@@ -3,85 +3,88 @@
   <head>
     <link rel="stylesheet" type="text/css" href="/index.css">
     <title>Makers BnB!</title>
+    <header>
+      <a href="/"><img src="https://image.ibb.co/hJX9iH/mbb_logo.png" align="right" width="800" alt="logo" /></a>
+      <nav>
+        <ul>
+          <li><a class="active" href="/">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="/users/new" method="post">Register</a></li>
+          <li><a href="#signin">Sign In</a></li>
+          <li><a href="#signout">Sign Out</a></li>
+        </ul>
+      </nav>
+    </header>
   </head>
     <body>
       <center>
-        <!-- div class userpanel creates the css field -->
-        <div class="userpanel">
-          <!-- div class logo is an image file of the logo -->
-          <div class="logo">
-            <img src="https://image.ibb.co/jVdJsc/mbb_index.png" width="825" height="200">
-          </div>
-          <!-- div class userlogin is the login form on the homepage -->
-            <div class="userloginform">
-               <% if !@user %>
-                 <form action="/sessions" method="post">
-                   <input type="text" name="username" placeholder="User name:" class="textboxes">
-                 <br>
-                   <input type="text" name="password" placeholder="Password:" class="textboxes">
-                 <br>
-                   <input type="submit" value="SIGN IN" class="inline-buttons">
-                 </form>
-                 <form action="/users/new" method="get" class="inline-buttons">
-                   <input type="submit" value="SIGN UP">
-                 </form>
-               <% end %>
-            </div>
-
-            <!-- div class welcome-user is the welcome message and user buttons that are displayed after login -->
-            <div class="welcome-user">
-              <% if @user %>
-                <h1>Welcome <%= @user.username %>!</h1>
-                  <form action="/profile" method="get" class="inline-buttons">
-                  <input type="submit" value="USER PROFILE">
-                  </form>
-                  <form action="/sessions/destroy" method="post" class="inline-buttons">
-                  <input type="submit" value="SIGN OUT">
-                  </form>
-                  <br><br>
-              <% end %>
-             </div>
-            <!-- div class createspace is the form for adding a space -->
-            <div class="createspace">
-              <% if @user %>
-                <form action="/properties" method="post">
-                  <input type="text" name="address" placeholder="Address:" class="textboxes">
-                  <br><br>
-                  <input type="number" name="price" placeholder="Price:" step="0.01" class="textboxes">
-                  <br><br>
-                  <input type="text" name="image" placeholder="Image URL:" class="textboxes">
-                  <br><br>
-
-                  <!-- Updating form to include date range  -->
-                  <input type="date" name="from" placeholder="from:" class="textboxes">
-                  <input type="date" name="until" placeholder="until" class="textboxes">
-                  <!-- Updating form to include date range  -->
-
-
-
-                  <input type="submit" value="CREATE SPACE" class="submit-button">
-                </form>
-              <% end %>
-            </div>
-        </div>
-          <div class="propertydisplay">
-            <p>
-              <% @properties.each do |property| %>
-                <%= property.address %>
-                <%= property.price %>
-                <%= property.from_date %>
-                <%= property.until_date %>
-                <img src="<%= property.image %>">
+        <div class="webpanel">
+          <% if !@user %>
+            <form action="/sessions" method="post">
+              <input type="text" name="username" placeholder="User name:" class="textboxes">
+              <br>
+              <input type="text" name="password" placeholder="Password:" class="textboxes">
+              <br>
+              <input type="submit" value="SIGN IN" class="inline-buttons">
+              <br><br>
+            </form>
+          <% end %>
+          <p>
+            <% @properties.each do |property| %>
+              <img id="properties" src="<%= property.image %>"><br>
+              <%= property.address %><br>
+              £<%= property.price %> per night!<br>
+              Available from:<%= property.from_date %><br>
+              Available until:<%= property.until_date %>
+              <!-- request button -->
+              <form id="<%= property.id %>" action="/request" method="post">
+                <input type="submit" name="Request" value="Request">
+                <input type="hidden" name="property-id" value="<%= property.user_id %>">
+              </form>
                 <!-- request button -->
-                <form id="<%= property.id %>" action="/request" method="post">
-                  <input type="submit" name="Request" value="Request">
-                  <input type="hidden" name="property-id" value="<%= property.user_id %>">
-                </form>
+            <% end %>
+          </p>
 
-                <!-- request button -->
-              <% end %>
-            </p>
+
+
+              <!-- div class welcome-user is the welcome message and user buttons that are displayed after login -->
+              <div class="welcome-user">
+                <% if @user %>
+                  <h1>Welcome <%= @user.username %>!</h1>
+                    <form action="/profile" method="get" class="inline-buttons">
+                    <input type="submit" value="USER PROFILE">
+                    </form>
+                    <form action="/sessions/destroy" method="post" class="inline-buttons">
+                    <input type="submit" value="SIGN OUT">
+                    </form>
+                    <br><br>
+                <% end %>
+               </div>
+              <!-- div class createspace is the form for adding a space -->
+              <div class="createspace">
+                <% if @user %>
+                  <form action="/properties" method="post">
+                    <input type="text" name="address" placeholder="Address:" class="textboxes">
+                    <br><br>
+                    <input type="number" name="price" placeholder="Price:" step="0.01" class="textboxes">
+                    <br><br>
+                    <input type="text" name="image" placeholder="Image URL:" class="textboxes">
+                    <br><br>
+
+                    <!-- Updating form to include date range  -->
+                    <input type="date" name="from" placeholder="from:" class="textboxes">
+                    <input type="date" name="until" placeholder="until" class="textboxes">
+                    <!-- Updating form to include date range  -->
+
+
+                    <input type="submit" value="CREATE SPACE" class="submit-button">
+                  </form>
+                <% end %>
+              </div>
           </div>
-      </center>
-    </body>
-</html>
+
+              </p>
+            </div>
+        </center>
+      </body>
+  </html>
