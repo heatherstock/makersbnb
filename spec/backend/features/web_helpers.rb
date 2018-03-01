@@ -1,3 +1,21 @@
+def sign_up_jim
+  visit('/')
+  click_button('SIGN UP')
+  fill_in 'username', with: "Jim"
+  fill_in 'email', with: "abc@123.com"
+  fill_in 'password', with: "abc123"
+  click_button('Submit')
+end
+
+def sign_up_bob
+  visit('/')
+  click_button('SIGN UP')
+  fill_in 'username', with: "Bob"
+  fill_in 'email', with: "bob@123.com"
+  fill_in 'password', with: "bob"
+  click_button('Submit')
+end
+
 def sign_in_jim
   visit ('/')
   fill_in 'username', with: 'Jim'

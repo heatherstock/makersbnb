@@ -2,10 +2,10 @@ feature "signing-up" do
   scenario "users can sign-up for an account" do
     visit('/')
     click_button('SIGN UP')
-    fill_in 'username', with: "Jim"
-    fill_in 'email', with: "123@abc.com"
+    fill_in 'username', with: "Frank"
+    fill_in 'email', with: "frank@frank.com"
     fill_in 'password', with: "abc123"
     click_button('Submit')
-    expect(page).to have_content("Jim")
+    expect(page).to have_content("Frank")
   end
 end

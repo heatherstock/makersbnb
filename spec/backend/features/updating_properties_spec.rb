@@ -1,6 +1,6 @@
 feature 'profile properties' do
   scenario 'users can update their properties' do
-    sign_in_jim
+    sign_up_jim
     add_snowy_road
     click_button('USER PROFILE')
     within('#2') do

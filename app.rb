@@ -7,16 +7,20 @@ require './lib/data_mapper_setup'
 
 class Makersbnb < Sinatra::Base
   enable :sessions
+  set :session_secret, 'super secret'
   register Sinatra::Flash
+  #
+  # helpers do
+  #   def current_user
+  #     @current_user ||= User.get(session[:user_id])
+  #   end
+  # end
 
   get '/' do
     @properties = Space.all
     @user = User.get(session[:id])
-    @username = User.first(:id => '4')
-    @users = User.all
     erb :index
   end
-  # <% if @user.id == property.user_id %>
 
   get '/users/new' do
     erb :users
@@ -35,8 +39,13 @@ class Makersbnb < Sinatra::Base
 
   post '/sessions' do
     user = User.authenticate(params[:username], params[:password])
-    session[:id] = user.id
-    redirect('/')
+    if user
+      session[:id] = user.id
+      redirect('/')
+    else
+      flash[:notice] = "Incorrect username or password"
+      redirect('/')
+    end
   end
 
   post '/sessions/destroy' do
