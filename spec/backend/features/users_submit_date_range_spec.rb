@@ -1,9 +1,6 @@
 feature 'view a range of dates that are available' do
   scenario 'space owner can specify property availability from the profile page' do
-    visit ('/')
-    fill_in 'username', with: 'Jim'
-    fill_in 'password', with: 'abc123'
-    click_button('SIGN IN')
+    sign_in_jim
     fill_in 'address', with: '31 Snowy road'
     fill_in 'price', with: '123'
     fill_in 'image', with: 'imgur/imgur'

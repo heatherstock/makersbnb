@@ -10,6 +10,7 @@ require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 require_relative '../lib/data_mapper_setup.rb'
+require 'backend/features/web_helpers'
 
 Rake.application.load_rakefile
 
