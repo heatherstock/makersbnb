@@ -13,7 +13,7 @@ class User
   property :id,         Serial
   property :username,   String, required: true, unique: true
   property :email,      String, format: :email_address, required: true, unique: true
-  property :password,   String, :length => 60, required: true
+  # property :password,   String, :length => 60, required: true
   property :password_digest, Text
 
   validates_confirmation_of :password

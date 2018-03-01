@@ -72,19 +72,13 @@ class Makersbnb < Sinatra::Base
   end
 
   post '/request' do
-    # @user = User.get(params['property-id'])
-    # p 'muuuuuuuuuuuuuuuu'
-    # p @user.username
+    landlord = User.get(params['property-id'])
+    session[:landlord] = landlord.id
     redirect('/request')
   end
 
   get '/request' do
-    @user = User.get(params['property-id'])
-    p @user.username
-    p 'muuuuuuuuuuuuuuuu'
-    p @user.username
-    p params['property-id']
-    @current_property = params['Request']
+    @landlord = User.get(session[:landlord])
     erb :request
   end
 
