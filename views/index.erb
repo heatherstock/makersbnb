@@ -59,7 +59,6 @@
 
 
 
-
                   <input type="submit" value="CREATE SPACE" class="submit-button">
                 </form>
               <% end %>
@@ -73,6 +72,13 @@
                 <%= property.from_date %>
                 <%= property.until_date %>
                 <img src="<%= property.image %>">
+                <!-- request button -->
+                <form id="<%= property.id %>" action="/request" method="get">
+                  <input type="submit" name="Request" value="Request">
+                </form>
+
+                <%= p @properties %>
+                <!-- request button -->
               <% end %>
             </p>
           </div>
