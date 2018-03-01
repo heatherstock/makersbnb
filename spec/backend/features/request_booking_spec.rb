@@ -4,6 +4,7 @@ feature 'requests can be made before booking' do
      within("#1") do
        click_button('Request')
      end
-   expect(page).to have_content('Request sent!')
+   expect(page).to have_content('Landlords name: Jim')
+
  end
 end
