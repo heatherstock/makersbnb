@@ -32,7 +32,7 @@ class Makersbnb < Sinatra::Base
       session[:id] = user.id
       redirect('/')
     else
-      flash[:notice] = "NO!"
+      flash[:notice] = "Required fields were left blank..."
       redirect('/users/new')
     end
   end
@@ -43,7 +43,7 @@ class Makersbnb < Sinatra::Base
       session[:id] = user.id
       redirect('/')
     else
-      flash[:notice] = "Incorrect username or password"
+      flash[:notice] = "Incorrect username or password..."
       redirect('/')
     end
   end

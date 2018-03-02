@@ -16,20 +16,22 @@ body {
 
 ul {
   list-style-type: none;
-  background: linear-gradient(WhiteSmoke, Black);
+  background: linear-gradient(WhiteSmoke, Gray);
   position: static;
   overflow: auto;
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 li {
+  margin-left: 25px;
+  text-align: center;
   float: left;
   border-right: 3px groove Gray;
 }
 
 li a {
-  display: block;
+  display: inline-block;
   color: WhiteSmoke;
   text-shadow: 0 0 10px rgba(0,0,0.9,0)rs;
   padding: 10px 15px;
@@ -52,6 +54,7 @@ header img,header nav {
 li a:hover:not(.active) {
     text-decoration: underline;
     text-decoration-color: black;
+    color: WhiteSmoke;
     text-decoration-style: groove;
     transform: rotateY( 180deg );
     -webkit-transform: rotateY(180deg);
