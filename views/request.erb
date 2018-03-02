@@ -4,8 +4,21 @@
     <meta charset="utf-8">
     <title>Request page</title>
   </head>
-  <body>
-    <h1>Request sent!</h1>
-    <p><%= @user.username %></p>
-  </body>
+    <body>
+      <header>
+        <a href="/"><img src="https://image.ibb.co/hJX9iH/mbb_logo.png" align="right" width="800" alt="logo"/></a>
+        <nav>
+          <ul>
+            <li><a class="active" href="/">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="/users/new" method="post">Register</a></li>
+            <li><a href="#signin">Sign In</a></li>
+            <li><a href="#signout">Sign Out</a></li>
+          </ul>
+        </nav>
+      </header>
+        <center>
+          <h1>Request sent!</h1>
+          <p><%= @user.username %></p>
+    </body>
 </html>
