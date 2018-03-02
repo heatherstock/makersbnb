@@ -2,6 +2,8 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="/signup.css">
+    <!-- The following link stylesheet is for Bootstap Glyphicons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <title>Sign Up!</title>
   </head>
     <body>
@@ -9,11 +11,8 @@
         <a href="/"><img src="https://image.ibb.co/hJX9iH/mbb_logo.png" align="right" width="800" alt="logo"/></a>
         <nav>
           <ul>
-            <li><a class="active" href="/">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="/users/new" method="post">Register</a></li>
-            <li><a href="#signin">Sign In</a></li>
-            <li><a href="#signout">Sign Out</a></li>
+            <li><i class="glyphicon glyphicon-home"></i><a name="Home" href="/"></a></li></button>
+            <li><i class="glyphicon glyphicon-user"></i><a name="Users" href="/users/new"></a></li>
           </ul>
         </nav>
       </header>
@@ -21,13 +20,13 @@
           <div class="webpanel">
             <%= styled_flash %>
               <img src="https://image.ibb.co/dau0qx/mbb_registertext.png" float="left" width="250" height="100" alt="signin"/>
-              <br><br>
+              <br>
               <form action="/users" method="POST">
-                <label for="username">CHOOSE A USERNAME:</label><br>
+                <label for="username">USERNAME:</label><br>
                 <input type="text" id="username" name="username"><br>
-                <label for="email">ENTER YOUR EMAIL:</label><br>
+                <label for="email">EMAIL:</label><br>
                 <input type="email" id="email" name="email"><br>
-                <label for="password">CHOOSE A PASSWORD:</label><br>
+                <label for="password">PASSWORD:</label><br>
                 <input type="password" id="password" name="password"><br>
                 <input type="submit" value="Submit">
               </form>
