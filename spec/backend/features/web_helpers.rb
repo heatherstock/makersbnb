@@ -1,6 +1,10 @@
 def sign_up_jim
   visit('/')
-  click_button('SIGN UP')
+  # find('a', text: 'Register').click
+  # click_link 'register'
+  click_on('Register')
+  # click_link('#register')
+  # click_button('SIGN UP')
   fill_in 'username', with: "Jim"
   fill_in 'email', with: "abc@123.com"
   fill_in 'password', with: "abc123"
@@ -9,7 +13,7 @@ end
 
 def sign_up_bob
   visit('/')
-  click_button('SIGN UP')
+  click_on('Register')
   fill_in 'username', with: "Bob"
   fill_in 'email', with: "bob@123.com"
   fill_in 'password', with: "bob"
