@@ -25,6 +25,7 @@ class User
   #
   def self.authenticate(username, password)
     first(username: username)
+    first(password: password)
   end
 
 end
