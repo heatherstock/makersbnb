@@ -1,34 +1,48 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title><%= @user.username %>
-      profile</title>
+    <link rel="stylesheet" type="text/css" href="/signup.css">
+    <title><%= @user.username %> profile</title>
   </head>
-  <body>
-    <h1><%= @user.username %>
-      profile</h1>
-    <p>
-      You are
-      <%= @user.username %>
-      Your email address is
-      <%= @user.email %>
-      Your properties:
-    </p>
-    <p>
-      <% @properties.each do |property| %>
-        <% if @user.id == property.user_id %>
-          <%= property.address %>
-          <%= property.price %>
-          <p>
-          <img src="<%= property.image %>">
+    <body>
+      <header>
+        <a href="/"><img src="https://image.ibb.co/hJX9iH/mbb_logo.png" align="right" width="800" alt="logo"/></a>
+        <nav>
+          <ul>
+            <li><a class="active" href="/">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="/users/new" method="post">Register</a></li>
+            <li><a href="#signin">Sign In</a></li>
+            <li><a href="#signout">Sign Out</a></li>
+          </ul>
+        </nav>
+      </header>
+        <center>
+          <h1><%= @user.username %> profile</h1>
+            <p>
+              You are
+              <%= @user.username %>
+              Your email address is
+              <%= @user.email %>
+              Your properties:
+            </p>
+            <p>
+              <% @properties.each do |property| %>
+              <% if @user.id == property.user_id %>
+              <%= property.address %>
+              <%= property.price %>
+            </p>
+            <p>
+              <img src="<%= property.image %>">
+            </p>
+              <form id="<%= property.id %>" action="/properties/<%= property.id %>/update" method="post">
+                <input type="text" name="address" placeholder="Update address:" class="userentry">
+                <input type="text" name="price" placeholder="Update price:" class="userentry">
+                <input type="submit" value="<%= property.id %>-Update">
+              </form>
+            <% end %>
+          <% end %>
         </p>
-          <form id="<%= property.id %>" action="/properties/<%= property.id %>/update" method="post">
-            <input type="text" name="address" placeholder="Update address:" class="userentry">
-            <input type="text" name="price" placeholder="Update price:" class="userentry">
-            <input type="submit" value="<%= property.id %>-Update">
-          </form>
-        <% end %>
-      <% end %>
-    </p>
-
-  </body>
+      </center>
+    </body>
 </html>
